@@ -35,12 +35,22 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+
+
+
+gem 'webpacker', github: 'rails/webpacker'
+
 gem 'devise_token_auth'
 gem 'omniauth'
+gem 'rack-cors', :require => 'rack/cors'
+
+gem 'will_paginate', '~> 3.1.0'
+gem 'carrierwave', '~> 1.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  gem 'faker'
 end
 
 group :development do

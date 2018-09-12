@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+
+20.times{|i|
+  p = Post.create(body: Faker::Lorem.sentence(10), image: File.open("#{Rails.root}/app/assets/images/#{i+1}.jpg"), user: User.first)
+  rand(5).times{
+    p.comments.create(body: Faker::Lorem.sentence(20), user: User.first)
+  }
+}
